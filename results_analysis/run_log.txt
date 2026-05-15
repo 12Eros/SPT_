@@ -1,0 +1,67 @@
+Dataset: G:\UniMod1K-main\SPT\data\RGBD1K_train_labelled
+Predictions: G:\UniMod1K-main\SPT\test\tracking_results\spt\unimod1k\rgbd-unsupervised
+
+missing 列表表示该预测文件未能在数据集中关联到真值序列（常见原因：预测目录为短名如 kid1，而数据集中为 Human/human154 等）。不是单帧检测漏检。
+
+Warnings:
+  - backpack1: length mismatch gt=600 pred=2999; evaluating first 600 aligned frames
+  - bag1: length mismatch gt=600 pred=699; evaluating first 600 aligned frames
+  - bag2: length mismatch gt=600 pred=2999; evaluating first 600 aligned frames
+  - bag3: length mismatch gt=600 pred=2999; evaluating first 600 aligned frames
+  - bag4: length mismatch gt=600 pred=2999; evaluating first 600 aligned frames
+  - balloon1: length mismatch gt=600 pred=2999; evaluating first 600 aligned frames
+  - basket1: length mismatch gt=600 pred=2999; evaluating first 600 aligned frames
+  - basketball1: GT matched by heuristic (shadow_init_bbox) -> human4
+  - basketball1: length mismatch gt=600 pred=2999; evaluating first 600 aligned frames
+  - bicycle1: length mismatch gt=600 pred=2999; evaluating first 600 aligned frames
+  - bicycle2: length mismatch gt=600 pred=2999; evaluating first 600 aligned frames
+  - board1: length mismatch gt=600 pred=2999; evaluating first 600 aligned frames
+  - book1: length mismatch gt=600 pred=2999; evaluating first 600 aligned frames
+  - bowl1: length mismatch gt=600 pred=2999; evaluating first 600 aligned frames
+  - box1: length mismatch gt=600 pred=2999; evaluating first 600 aligned frames
+  - box2: length mismatch gt=600 pred=2999; evaluating first 600 aligned frames
+  - buggy1: length mismatch gt=600 pred=499; evaluating first 499 aligned frames
+  - cart1: length mismatch gt=600 pred=499; evaluating first 499 aligned frames
+  - cart2: length mismatch gt=600 pred=499; evaluating first 499 aligned frames
+  - chair1: length mismatch gt=600 pred=2999; evaluating first 600 aligned frames
+  - cola1: GT matched by heuristic (shadow_init_bbox_bottle_l1) -> bottle2
+  - cola1: length mismatch gt=600 pred=2999; evaluating first 600 aligned frames
+  - deer1: length mismatch gt=600 pred=1199; evaluating first 600 aligned frames
+  - doll1: length mismatch gt=600 pred=2999; evaluating first 600 aligned frames
+  - doll2: length mismatch gt=600 pred=2999; evaluating first 600 aligned frames
+  - extinguisher1: GT matched by heuristic (shadow_init_bbox) -> cup2
+  - extinguisher1: length mismatch gt=600 pred=2999; evaluating first 600 aligned frames
+  - girl1: GT matched by heuristic (shadow_init_bbox_l1_tiebreak) -> human24
+  - girl1: length mismatch gt=600 pred=2999; evaluating first 600 aligned frames
+  - hub1: GT matched by heuristic (shadow_init_bbox) -> besom3
+  - hub1: length mismatch gt=600 pred=2999; evaluating first 600 aligned frames
+  - kid1: GT matched by heuristic (shadow_init_bbox) -> human154
+  - kid1: length mismatch gt=600 pred=1199; evaluating first 600 aligned frames
+  - kid2: GT matched by heuristic (shadow_init_bbox) -> human116
+  - kid2: length mismatch gt=600 pred=999; evaluating first 600 aligned frames
+  - kid3: GT matched by heuristic (shadow_init_bbox) -> human26
+  - kid3: length mismatch gt=600 pred=2999; evaluating first 600 aligned frames
+  - lamp1: length mismatch gt=600 pred=2999; evaluating first 600 aligned frames
+  - leaf1: length mismatch gt=600 pred=2999; evaluating first 600 aligned frames
+  - leaf2: length mismatch gt=600 pred=2999; evaluating first 600 aligned frames
+  - man1: GT matched by heuristic (shadow_init_bbox) -> human7
+  - man1: length mismatch gt=600 pred=2999; evaluating first 600 aligned frames
+  - man2: GT matched by heuristic (shadow_init_bbox_l1_tiebreak) -> human12
+  - man2: length mismatch gt=600 pred=2999; evaluating first 600 aligned frames
+  - monkey1: length mismatch gt=600 pred=1099; evaluating first 600 aligned frames
+  - monkey2: length mismatch gt=600 pred=599; evaluating first 599 aligned frames
+  - monkey3: length mismatch gt=600 pred=599; evaluating first 599 aligned frames
+  - pear1: length mismatch gt=600 pred=2999; evaluating first 600 aligned frames
+  - pigeon1: length mismatch gt=600 pred=799; evaluating first 600 aligned frames
+  - pigeon2: length mismatch gt=600 pred=1099; evaluating first 600 aligned frames
+  - pigeon3: length mismatch gt=600 pred=2899; evaluating first 600 aligned frames
+  - pillow1: length mismatch gt=600 pred=2999; evaluating first 600 aligned frames
+  - red_panda1: length mismatch gt=600 pred=2999; evaluating first 600 aligned frames
+  - red_panda2: length mismatch gt=600 pred=999; evaluating first 600 aligned frames
+  - red_panda3: length mismatch gt=600 pred=1999; evaluating first 600 aligned frames
+  - tiger1: length mismatch gt=600 pred=2599; evaluating first 600 aligned frames
+  - tiger2: length mismatch gt=600 pred=599; evaluating first 599 aligned frames
+  - toy1: length mismatch gt=600 pred=2999; evaluating first 600 aligned frames
+  - trashcan1: length mismatch gt=600 pred=2999; evaluating first 600 aligned frames
+  - tshirt1: length mismatch gt=600 pred=2999; evaluating first 600 aligned frames
+
