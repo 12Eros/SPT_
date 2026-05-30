@@ -16,5 +16,5 @@ class EnvironmentSettings:
         self.msra10k_dir = r''
         self.davis_dir = r''
         self.youtubevos_dir = r''
-        self.unimod1k_dir = r'G:\UniMod1K-main\SPT\data\RGBD1K_train_subset'
+        self.unimod1k_dir = r'G:\UniMod1K-main\SPT\data\RGBD1K_train_labelled'
         self.unimod1k_dir_nlp = r'G:\UniMod1K-main\SPT\data\nlps_train'

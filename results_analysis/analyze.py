@@ -4,7 +4,14 @@ Evaluate tracking results against UniMod1K / RGBD1K-style annotations.
 Usage:
     python analyze.py <dataset_root> <predictions_root>
 
-Writes metrics under this package directory (results_analysis/).
+Writes:
+  - per_sequence.csv, per_category.csv, summary.json, run_log.txt
+  - plots/01_iou_extremes.png
+  - plots/02_length_vs_iou.png
+  - plots/03_precision_vs_success_bubble.png
+  - plots/04_qualitative_01_xxx.png ... 04_qualitative_05_xxx.png   (top-5 best sequences, RGB+Depth with boxes)
+
+The 5 qualitative figures are automatically chosen from sequences with the highest mean_iou.
 """
 
 import argparse
@@ -19,10 +26,12 @@ try:
     from . import loaders
     from . import metrics_core
     from . import gt_resolve
+    from . import visualize
 except ImportError:
     import loaders
     import metrics_core
     import gt_resolve
+    import visualize
 
 
 def _iou_thresholds():
@@ -149,7 +158,12 @@ def main(argv=None):
             continue
 
         gt_rel = str(gt_path.relative_to(dataset_root)).replace("\\", "/")
-        category = gt_rel.split("/")[0] if "/" in gt_rel else gt_rel.split("\\")[0]
+        parts = gt_rel.split("/")
+        # Prefer the real top-level category folder (e.g. "Animal") over the sequence leaf name
+        if len(parts) >= 2:
+            category = parts[0]
+        else:
+            category = parts[0] if parts else "Unknown"
 
         row = {
             "sequence": seq_leaf,
@@ -254,12 +268,26 @@ def main(argv=None):
             for m in missing:
                 f.write(f"  - {m}\n")
 
+    # --- Automatically generate summary plots + 5 high-quality qualitative comparison figures
+    # (RGB + Depth with GT/Pred boxes) for the best performing sequences ---
+    try:
+        visualize.generate_all_visualizations(
+            per_seq=per_seq,
+            dataset_root=dataset_root,
+            predictions_root=pred_root,
+            out_dir=here,
+            top_qualitative_k=5,          # ← change this if you want more or fewer
+        )
+    except Exception as viz_err:
+        print(f"[analyze] Visualization generation skipped or failed (non-fatal): {viz_err}", file=sys.stderr)
+
     print(json.dumps(overall, indent=2, ensure_ascii=False))
     print(f"\nWrote: {summary_path}")
     print(f"Wrote: {csv_path}")
     print(f"Wrote: {cat_csv_path}")
     if missing:
         print(f"Wrote issues list: {log_path}")
+    print("If matplotlib/pillow/numpy are installed, 4 plots have been saved under results_analysis/plots/")
     return 0 if per_seq else 1
 
 

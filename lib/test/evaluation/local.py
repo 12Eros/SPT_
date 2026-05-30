@@ -27,7 +27,7 @@ def local_env_settings():
     settings.uav_path = r'G:\UniMod1K-main\SPT\data\UAV123'
     settings.vot_path = r'G:\UniMod1K-main\SPT\data\VOT2019'
     settings.youtubevos_dir = r''
-    settings.unimod1k_path = r"D:\sequences_RGBD1K"
+    settings.unimod1k_path = r"D:\sequences_RGBD1K" 
 
     return settings
 

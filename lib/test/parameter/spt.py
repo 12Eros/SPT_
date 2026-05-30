@@ -21,7 +21,7 @@ def parameters(yaml_name: str):
     params.search_size = cfg.TEST.SEARCH_SIZE
 
     # Network checkpoint path
-    params.checkpoint = os.path.join(save_dir, r"checkpoints\train\spt\unimod1k\SPT_ep0002.pth.tar")
+    params.checkpoint = os.path.join(save_dir, r"checkpoints\train\spt\unimod1k\SPT_ep0120.pth.tar")
 
     # whether to save boxes from all queries
     params.save_all_boxes = False

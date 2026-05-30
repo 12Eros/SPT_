@@ -1,0 +1,427 @@
+{
+  "generated_at_utc": "2026-05-28T13:41:02.678027+00:00",
+  "dataset_root": "/public/home/comsen25-shared/SPT_/data/sequences_RGBD1K",
+  "predictions_root": "/public/home/comsen25-shared/SPT_/test/tracking_results/spt/unimod1k/rgbd-unsupervised",
+  "num_prediction_files": 50,
+  "num_sequences_evaluated": 50,
+  "num_missing_or_invalid": 0,
+  "mean_iou": 0.4943581398846182,
+  "mean_success_auc": 0.5017724541137663,
+  "mean_center_error_px": 70.62675511008344,
+  "mean_precision_20px": 0.6346472904816478,
+  "per_category_macro": {
+    "backpack1": {
+      "num_sequences": 1,
+      "mean_iou": 0.3888539881511527,
+      "mean_success_auc": 0.40500099621438534,
+      "mean_center_error_px": 48.167237500155146,
+      "mean_precision_20px": 0.5163179916317991
+    },
+    "bag1": {
+      "num_sequences": 1,
+      "mean_iou": 0.46225797456164586,
+      "mean_success_auc": 0.47243867243867255,
+      "mean_center_error_px": 69.11915858021496,
+      "mean_precision_20px": 0.646969696969697
+    },
+    "bag2": {
+      "num_sequences": 1,
+      "mean_iou": 0.4632429608879828,
+      "mean_success_auc": 0.472484777249947,
+      "mean_center_error_px": 52.60021721387678,
+      "mean_precision_20px": 0.5728488172780254
+    },
+    "bag3": {
+      "num_sequences": 1,
+      "mean_iou": 0.5776250032204151,
+      "mean_success_auc": 0.5783039611433823,
+      "mean_center_error_px": 40.5676004259932,
+      "mean_precision_20px": 0.7594762232942798
+    },
+    "bag4": {
+      "num_sequences": 1,
+      "mean_iou": 0.43873997355199457,
+      "mean_success_auc": 0.45017317509561544,
+      "mean_center_error_px": 72.03448978367516,
+      "mean_precision_20px": 0.5163736642537056
+    },
+    "balloon1": {
+      "num_sequences": 1,
+      "mean_iou": 0.740007228286039,
+      "mean_success_auc": 0.7285251344922814,
+      "mean_center_error_px": 4.258130157573617,
+      "mean_precision_20px": 0.9949715051961113
+    },
+    "basket1": {
+      "num_sequences": 1,
+      "mean_iou": 0.7490199061369064,
+      "mean_success_auc": 0.737844962792405,
+      "mean_center_error_px": 7.87801885713565,
+      "mean_precision_20px": 0.9348283111422565
+    },
+    "basketball1": {
+      "num_sequences": 1,
+      "mean_iou": 0.10510448781379757,
+      "mean_success_auc": 0.14242769601770636,
+      "mean_center_error_px": 150.94551007671438,
+      "mean_precision_20px": 0.20326049254249046
+    },
+    "bicycle1": {
+      "num_sequences": 1,
+      "mean_iou": 0.317252620546872,
+      "mean_success_auc": 0.34062995434836585,
+      "mean_center_error_px": 256.2222815104172,
+      "mean_precision_20px": 0.3802647412755716
+    },
+    "bicycle2": {
+      "num_sequences": 1,
+      "mean_iou": 0.8532080723004839,
+      "mean_success_auc": 0.8362369337979094,
+      "mean_center_error_px": 4.523236901397986,
+      "mean_precision_20px": 0.9832943534914801
+    },
+    "board1": {
+      "num_sequences": 1,
+      "mean_iou": 0.4392157070407675,
+      "mean_success_auc": 0.45295416046404186,
+      "mean_center_error_px": 146.04210317990805,
+      "mean_precision_20px": 0.47143370463528567
+    },
+    "book1": {
+      "num_sequences": 1,
+      "mean_iou": 0.612195161874031,
+      "mean_success_auc": 0.6098888450407789,
+      "mean_center_error_px": 20.43386558379335,
+      "mean_precision_20px": 0.7265193370165746
+    },
+    "bowl1": {
+      "num_sequences": 1,
+      "mean_iou": 0.4782021231807365,
+      "mean_success_auc": 0.48636432888121484,
+      "mean_center_error_px": 41.64390870984289,
+      "mean_precision_20px": 0.5289726270885176
+    },
+    "box1": {
+      "num_sequences": 1,
+      "mean_iou": 0.6050082834656143,
+      "mean_success_auc": 0.6039508552156106,
+      "mean_center_error_px": 11.902988273756737,
+      "mean_precision_20px": 0.7929173693086004
+    },
+    "box2": {
+      "num_sequences": 1,
+      "mean_iou": 0.48373023566461815,
+      "mean_success_auc": 0.4929157709595466,
+      "mean_center_error_px": 53.39495761426266,
+      "mean_precision_20px": 0.5776333789329685
+    },
+    "buggy1": {
+      "num_sequences": 1,
+      "mean_iou": 0.6790120796868363,
+      "mean_success_auc": 0.670382321306346,
+      "mean_center_error_px": 4.2780527372417305,
+      "mean_precision_20px": 0.973305954825462
+    },
+    "cart1": {
+      "num_sequences": 1,
+      "mean_iou": 0.7990363498125745,
+      "mean_success_auc": 0.7855593430430743,
+      "mean_center_error_px": 3.0308144251003117,
+      "mean_precision_20px": 0.9956616052060737
+    },
+    "cart2": {
+      "num_sequences": 1,
+      "mean_iou": 0.7616756431333063,
+      "mean_success_auc": 0.748544708464548,
+      "mean_center_error_px": 7.006271535432057,
+      "mean_precision_20px": 0.9418837675350702
+    },
+    "chair1": {
+      "num_sequences": 1,
+      "mean_iou": 0.3345052515860776,
+      "mean_success_auc": 0.3511775456018758,
+      "mean_center_error_px": 48.91194238136743,
+      "mean_precision_20px": 0.3946415640839971
+    },
+    "cola1": {
+      "num_sequences": 1,
+      "mean_iou": 0.4889347407570624,
+      "mean_success_auc": 0.4953746530989824,
+      "mean_center_error_px": 87.82736874219833,
+      "mean_precision_20px": 0.6549491211840888
+    },
+    "deer1": {
+      "num_sequences": 1,
+      "mean_iou": 0.6172208839519693,
+      "mean_success_auc": 0.6145994678104769,
+      "mean_center_error_px": 31.582226427495108,
+      "mean_precision_20px": 0.786488740617181
+    },
+    "doll1": {
+      "num_sequences": 1,
+      "mean_iou": 0.7032651058741631,
+      "mean_success_auc": 0.6951179332131714,
+      "mean_center_error_px": 21.27121072554416,
+      "mean_precision_20px": 0.9369149369149369
+    },
+    "doll2": {
+      "num_sequences": 1,
+      "mean_iou": 0.3766274624823403,
+      "mean_success_auc": 0.3927268581851346,
+      "mean_center_error_px": 46.10617808515983,
+      "mean_precision_20px": 0.5150478796169631
+    },
+    "extinguisher1": {
+      "num_sequences": 1,
+      "mean_iou": 0.38398579440289804,
+      "mean_success_auc": 0.4006516290726817,
+      "mean_center_error_px": 75.20816289558931,
+      "mean_precision_20px": 0.4975438596491228
+    },
+    "girl1": {
+      "num_sequences": 1,
+      "mean_iou": 0.3823479071515068,
+      "mean_success_auc": 0.4015098722415796,
+      "mean_center_error_px": 308.1037961933487,
+      "mean_precision_20px": 0.43066202090592337
+    },
+    "hub1": {
+      "num_sequences": 1,
+      "mean_iou": 0.5524765657059768,
+      "mean_success_auc": 0.5534334023464458,
+      "mean_center_error_px": 31.53580339273036,
+      "mean_precision_20px": 0.683695652173913
+    },
+    "kid1": {
+      "num_sequences": 1,
+      "mean_iou": 0.3047033258348109,
+      "mean_success_auc": 0.3214084959447523,
+      "mean_center_error_px": 51.196190643357376,
+      "mean_precision_20px": 0.5075885328836425
+    },
+    "kid2": {
+      "num_sequences": 1,
+      "mean_iou": 0.674863884201087,
+      "mean_success_auc": 0.6679097341747945,
+      "mean_center_error_px": 6.315743300640024,
+      "mean_precision_20px": 0.9226907630522089
+    },
+    "kid3": {
+      "num_sequences": 1,
+      "mean_iou": 0.41767023563347216,
+      "mean_success_auc": 0.4315699590928949,
+      "mean_center_error_px": 171.64225596100238,
+      "mean_precision_20px": 0.5617180984153461
+    },
+    "lamp1": {
+      "num_sequences": 1,
+      "mean_iou": 0.41518430014227287,
+      "mean_success_auc": 0.4266539949313059,
+      "mean_center_error_px": 50.026258412167294,
+      "mean_precision_20px": 0.4373249299719888
+    },
+    "leaf1": {
+      "num_sequences": 1,
+      "mean_iou": 0.20313920503520405,
+      "mean_success_auc": 0.23212499404563425,
+      "mean_center_error_px": 46.733593620404335,
+      "mean_precision_20px": 0.278759586528843
+    },
+    "leaf2": {
+      "num_sequences": 1,
+      "mean_iou": 0.6615085415799988,
+      "mean_success_auc": 0.6564810330912026,
+      "mean_center_error_px": 26.838455164822022,
+      "mean_precision_20px": 0.8505084745762712
+    },
+    "man1": {
+      "num_sequences": 1,
+      "mean_iou": 0.4199932488146069,
+      "mean_success_auc": 0.4368479337879582,
+      "mean_center_error_px": 141.2546176004492,
+      "mean_precision_20px": 0.4638922888616891
+    },
+    "man2": {
+      "num_sequences": 1,
+      "mean_iou": 0.396069999534324,
+      "mean_success_auc": 0.41255605381165933,
+      "mean_center_error_px": 104.38885076164591,
+      "mean_precision_20px": 0.46429803380476026
+    },
+    "monkey1": {
+      "num_sequences": 1,
+      "mean_iou": 0.4275150455227941,
+      "mean_success_auc": 0.4379033664747951,
+      "mean_center_error_px": 34.4972943608153,
+      "mean_precision_20px": 0.6666666666666666
+    },
+    "monkey2": {
+      "num_sequences": 1,
+      "mean_iou": 0.4596340806515421,
+      "mean_success_auc": 0.4697511725892361,
+      "mean_center_error_px": 22.936982651885902,
+      "mean_precision_20px": 0.6393989983305509
+    },
+    "monkey3": {
+      "num_sequences": 1,
+      "mean_iou": 0.6411282380023143,
+      "mean_success_auc": 0.6345496462357897,
+      "mean_center_error_px": 4.792970232589149,
+      "mean_precision_20px": 0.986644407345576
+    },
+    "pear1": {
+      "num_sequences": 1,
+      "mean_iou": 0.4543486590237787,
+      "mean_success_auc": 0.46545113200642774,
+      "mean_center_error_px": 63.732530804786386,
+      "mean_precision_20px": 0.5853658536585366
+    },
+    "pigeon1": {
+      "num_sequences": 1,
+      "mean_iou": 0.6008402426772522,
+      "mean_success_auc": 0.5983670063770189,
+      "mean_center_error_px": 13.33310059924721,
+      "mean_precision_20px": 0.8585732165206508
+    },
+    "pigeon2": {
+      "num_sequences": 1,
+      "mean_iou": 0.10095324354097071,
+      "mean_success_auc": 0.1398809523809524,
+      "mean_center_error_px": 419.9967985034662,
+      "mean_precision_20px": 0.15120967741935484
+    },
+    "pigeon3": {
+      "num_sequences": 1,
+      "mean_iou": 0.23401649055416168,
+      "mean_success_auc": 0.25641025641025644,
+      "mean_center_error_px": 62.69615759966455,
+      "mean_precision_20px": 0.4881949733434882
+    },
+    "pillow1": {
+      "num_sequences": 1,
+      "mean_iou": 0.3863049970147259,
+      "mean_success_auc": 0.4033300290046628,
+      "mean_center_error_px": 113.51656648158546,
+      "mean_precision_20px": 0.49653045489591363
+    },
+    "red_panda1": {
+      "num_sequences": 1,
+      "mean_iou": 0.1814206388106597,
+      "mean_success_auc": 0.21430212333037973,
+      "mean_center_error_px": 176.41446604787797,
+      "mean_precision_20px": 0.20882150241212957
+    },
+    "red_panda2": {
+      "num_sequences": 1,
+      "mean_iou": 0.8675028648406993,
+      "mean_success_auc": 0.8503741837075169,
+      "mean_center_error_px": 3.9592594930784806,
+      "mean_precision_20px": 0.993993993993994
+    },
+    "red_panda3": {
+      "num_sequences": 1,
+      "mean_iou": 0.44503937360983775,
+      "mean_success_auc": 0.4505958411733489,
+      "mean_center_error_px": 51.86882026762731,
+      "mean_precision_20px": 0.5035460992907801
+    },
+    "tiger1": {
+      "num_sequences": 1,
+      "mean_iou": 0.5443974687410785,
+      "mean_success_auc": 0.5482371794871795,
+      "mean_center_error_px": 58.22220090942506,
+      "mean_precision_20px": 0.7274038461538461
+    },
+    "tiger2": {
+      "num_sequences": 1,
+      "mean_iou": 0.7819424017765948,
+      "mean_success_auc": 0.7682645679306779,
+      "mean_center_error_px": 4.44898146747279,
+      "mean_precision_20px": 0.991652754590985
+    },
+    "toy1": {
+      "num_sequences": 1,
+      "mean_iou": 0.5504397841659763,
+      "mean_success_auc": 0.554640522875817,
+      "mean_center_error_px": 52.40952255823791,
+      "mean_precision_20px": 0.7278431372549019
+    },
+    "trashcan1": {
+      "num_sequences": 1,
+      "mean_iou": 0.18037888791184897,
+      "mean_success_auc": 0.213422578333659,
+      "mean_center_error_px": 145.28568558660677,
+      "mean_precision_20px": 0.2130642954856361
+    },
+    "tshirt1": {
+      "num_sequences": 1,
+      "mean_iou": 0.5761603253831231,
+      "mean_success_auc": 0.578371989954203,
+      "mean_center_error_px": 60.23492056539218,
+      "mean_precision_20px": 0.589796621854533
+    }
+  },
+  "notes": {
+    "missing_entries": "missing 列表表示该预测文件未能在数据集中关联到真值序列（常见原因：预测目录为短名如 kid1，而数据集中为 Human/human154 等）。不是单帧检测漏检。",
+    "overall_mean": "mean_iou、mean_success_auc 等为：先对每条序列计算指标，再对所有已评估序列做算术平均（宏平均，每条序列权重相同）。",
+    "per_category_macro": "per_category_macro 按真值路径的顶层大类（如 Human、Clothes）分组后，在组内对序列再做宏平均。",
+    "shadow_match": "若 gt_match_method 以 shadow 开头，表示通过首帧框 IoU/L1 等启发式关联到 GT，若与您的测试划分不一致，可在 sequence_alias.csv 中手工指定 pred_folder -> dataset_relative_path 覆盖。"
+  },
+  "warnings": [
+    "backpack1: length mismatch gt=3000 pred=2999; evaluating first 2999 aligned frames",
+    "bag1: length mismatch gt=700 pred=699; evaluating first 699 aligned frames",
+    "bag2: length mismatch gt=3000 pred=2999; evaluating first 2999 aligned frames",
+    "bag3: length mismatch gt=3000 pred=2999; evaluating first 2999 aligned frames",
+    "bag4: length mismatch gt=3000 pred=2999; evaluating first 2999 aligned frames",
+    "balloon1: length mismatch gt=3000 pred=2999; evaluating first 2999 aligned frames",
+    "basket1: length mismatch gt=3000 pred=2999; evaluating first 2999 aligned frames",
+    "basketball1: length mismatch gt=3000 pred=2999; evaluating first 2999 aligned frames",
+    "bicycle1: length mismatch gt=3000 pred=2999; evaluating first 2999 aligned frames",
+    "bicycle2: length mismatch gt=3000 pred=2999; evaluating first 2999 aligned frames",
+    "board1: length mismatch gt=3000 pred=2999; evaluating first 2999 aligned frames",
+    "book1: length mismatch gt=3000 pred=2999; evaluating first 2999 aligned frames",
+    "bowl1: length mismatch gt=3000 pred=2999; evaluating first 2999 aligned frames",
+    "box1: length mismatch gt=3000 pred=2999; evaluating first 2999 aligned frames",
+    "box2: length mismatch gt=3000 pred=2999; evaluating first 2999 aligned frames",
+    "buggy1: length mismatch gt=500 pred=499; evaluating first 499 aligned frames",
+    "cart1: length mismatch gt=500 pred=499; evaluating first 499 aligned frames",
+    "cart2: length mismatch gt=500 pred=499; evaluating first 499 aligned frames",
+    "chair1: length mismatch gt=3000 pred=2999; evaluating first 2999 aligned frames",
+    "cola1: length mismatch gt=3000 pred=2999; evaluating first 2999 aligned frames",
+    "deer1: length mismatch gt=1200 pred=1199; evaluating first 1199 aligned frames",
+    "doll1: length mismatch gt=3000 pred=2999; evaluating first 2999 aligned frames",
+    "doll2: length mismatch gt=3000 pred=2999; evaluating first 2999 aligned frames",
+    "extinguisher1: length mismatch gt=3000 pred=2999; evaluating first 2999 aligned frames",
+    "girl1: length mismatch gt=3000 pred=2999; evaluating first 2999 aligned frames",
+    "hub1: length mismatch gt=3000 pred=2999; evaluating first 2999 aligned frames",
+    "kid1: length mismatch gt=1200 pred=1199; evaluating first 1199 aligned frames",
+    "kid2: length mismatch gt=1000 pred=999; evaluating first 999 aligned frames",
+    "kid3: length mismatch gt=3000 pred=2999; evaluating first 2999 aligned frames",
+    "lamp1: length mismatch gt=3000 pred=2999; evaluating first 2999 aligned frames",
+    "leaf1: length mismatch gt=3000 pred=2999; evaluating first 2999 aligned frames",
+    "leaf2: length mismatch gt=3000 pred=2999; evaluating first 2999 aligned frames",
+    "man1: length mismatch gt=3000 pred=2999; evaluating first 2999 aligned frames",
+    "man2: length mismatch gt=3000 pred=2999; evaluating first 2999 aligned frames",
+    "monkey1: length mismatch gt=1100 pred=1099; evaluating first 1099 aligned frames",
+    "monkey2: length mismatch gt=600 pred=599; evaluating first 599 aligned frames",
+    "monkey3: length mismatch gt=600 pred=599; evaluating first 599 aligned frames",
+    "pear1: length mismatch gt=3000 pred=2999; evaluating first 2999 aligned frames",
+    "pigeon1: length mismatch gt=800 pred=799; evaluating first 799 aligned frames",
+    "pigeon2: length mismatch gt=1100 pred=1099; evaluating first 1099 aligned frames",
+    "pigeon3: length mismatch gt=2900 pred=2899; evaluating first 2899 aligned frames",
+    "pillow1: length mismatch gt=3000 pred=2999; evaluating first 2999 aligned frames",
+    "red_panda1: length mismatch gt=3000 pred=2999; evaluating first 2999 aligned frames",
+    "red_panda2: length mismatch gt=1000 pred=999; evaluating first 999 aligned frames",
+    "red_panda3: length mismatch gt=2000 pred=1999; evaluating first 1999 aligned frames",
+    "tiger1: length mismatch gt=2600 pred=2599; evaluating first 2599 aligned frames",
+    "tiger2: length mismatch gt=600 pred=599; evaluating first 599 aligned frames",
+    "toy1: length mismatch gt=3000 pred=2999; evaluating first 2999 aligned frames",
+    "trashcan1: length mismatch gt=3000 pred=2999; evaluating first 2999 aligned frames",
+    "tshirt1: length mismatch gt=3000 pred=2999; evaluating first 2999 aligned frames"
+  ],
+  "missing": []
+}
+
+Wrote: /public/home/comsen25-shared/SPT_/results_analysis/summary.json
+Wrote: /public/home/comsen25-shared/SPT_/results_analysis/per_sequence.csv
+Wrote: /public/home/comsen25-shared/SPT_/results_analysis/per_category.csv
