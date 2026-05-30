@@ -1,77 +1,44 @@
-# UniMod1K: Towards a More Universal Large-Scale Dataset and Benchmark for Multi-Modal Learning
+#### 如需训练,修改以下文件中的路径 
 
-The official implementation of the multi-modal (Vision, Depth and Language) SPT tracker of the paper **UniMod1K: Towards a More Universal Large-Scale Dataset and Benchmark for Multi-Modal Learning**
+1.\experiments\spt\unimod1k.yaml:预训练权重路径
 
-<center><img width="75%" alt="" src="./spt_vdl_framework.jpg"/></center>
+2.lib\train\admin\local.py:最后两行，训练集地址与文本描述地址
 
-## Usage
-### Installation
+#### 如需测试,修改以下文件中的路径
 
-Install the environment using Anaconda
-```
-conda create -n spt python=3.6
-conda activate spt
-bash install_pytorch17.sh
-cd /path/to/UniMod1K/SPT
-```
+1.lib\test\parameter\spt.py:测试使用的权重
 
-### Data Preparation
-The training dataset is the [**UniMod1K**]
-```
---UniMod1K
-    |--Adapter
-        |--adapter1
-        |--adapter2
-        ...
-    |--Animal
-       |--alpaca1
-       |--bear1
-        ...
-    ... 
+2.lib\test\evaluation\local.py:最后一行,测试集路径
+
+##### 训练命令：
+
+```bash
+python -m lib.train.run_training
 ```
 
-### Set project paths
-Run the following command to set paths for this project
-```
-python tracking/create_default_local_file.py --workspace_dir . --data_dir ./data --save_dir .
+##### 测试命令
+
+```bash
+python -m tracking.test
 ```
 
-After running this command, you can also modify paths by editing these two files
-```
-lib/train/admin/local.py  # paths about training
-lib/test/evaluation/local.py  # paths about testing
-```
-### Training
-Download the pretrained weight [[BERT pretrained weight](https://drive.google.com/drive/folders/1Fi-4TSaIP4B_TPi2Jme2sxZRdH9l5NPN?usp=share_link)] put it under `$PROJECT_ROOT$/pretrained_models`. 
-Set the MODEL.LANGUAGE.PATH and MODEL.LANGUAGE.VOCAB_PATH in ./experiments/spt/unimod1k.yaml.
+##### 结果分析
 
-Download the pretrained [Stark-s model](https://drive.google.com/drive/folders/142sMjoT5wT6CuRiFT5LLejgr7VLKmaC4)
-and put it under `$PROJECT_ROOT$/pretrained_models/`. 
-Set the MODEL.PRETRAINED path in ./experiments/spt/unimod1k.yaml.
-
-Training with multiple GPUs using DDP (4 RTX3090Ti with batch size of 16)
-```
-export PYTHONPATH=/path/to/SPT:$PYTHONPATH
-python -m torch.distributed.launch --nproc_per_node=4 ./lib/train/run_training.py  
-```
-or using single GPU:
-```
-python ./lib/train/run_training.py  
+```bash
+python results_analysis/analyze.py   "test_dataset/path" "analysis_result_path"
 ```
 
-### Test
-Edit ./lib/test/evaluation/local.py to set the test set path, then run
-```
-python ./tracking/test.py
-```
-You can also use the [pre-trained model](https://drive.google.com/file/d/1aU1FWERBab0aGR9nxwN138JG1lLQlnU5/view?usp=drive_link), 
-and set the path in ./lib/test/parameter/spt.py
+##### 获取数据集：
 
-### Evaluation
-Put the raw results in the [VOT Toolkit](https://github.com/votchallenge/toolkit) workspace, then use the command of vot analysis. The tutorial of VOT Toolkit can be found [here](https://www.votchallenge.net/howto/overview.html).
+https://pan.baidu.com/s/1R3NG_-FKv6Ztx_aBwQJ4-w?pwd=ctnk
 
-## Acknowledgment
-- This repo is based on [Stark](https://github.com/researchmm/Stark) which is an excellent work.
+https://drive.google.com/drive/folders/1Z2PnWEgdZG0KVI2MX5chWddNlbuuEug3?usp=share_link
 
-## Contact
-If you have any question, please feel free to [contact us](xuefeng_zhu95@163.com)(xuefeng_zhu95@163.com)
+##### 获取预训练权重:
+
+[BERT pretrained weight](https://drive.google.com/drive/folders/1Fi-4TSaIP4B_TPi2Jme2sxZRdH9l5NPN?usp=share_link)
+
+[Stark-s model](https://drive.google.com/drive/folders/142sMjoT5wT6CuRiFT5LLejgr7VLKmaC4)
+
+
+
