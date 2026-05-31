@@ -277,12 +277,17 @@ def plot_qualitative_comparison(
     out_dir: Path,
     frames: Optional[Tuple[int, ...]] = None,
     rank: Optional[int] = None,
+    title_prefix: Optional[str] = None,
+    filename_prefix: str = "04_qualitative",
 ) -> Optional[Path]:
     """
     Draw RGB + Depth side-by-side for 3 (or custom) time points.
     Green = GT, Red = Prediction.
     Automatically chooses good frames if `frames` is None.
     Adds ranking and metrics to the title when available.
+
+    title_prefix: e.g. "Best performing" or "Worst performing"
+    filename_prefix: used for output file naming (e.g. "04_qualitative" or "05_worst_qualitative")
     """
     if not HAS_VIZ_DEPS:
         print("[visualize] matplotlib/pillow not installed, skip qualitative plot")
@@ -337,12 +342,16 @@ def plot_qualitative_comparison(
     gs = fig.add_gridspec(num_rows, 2, hspace=0.28, wspace=0.06)
 
     # Title with extra info
-    title_parts = [seq_name]
+    title_parts = []
+    if title_prefix:
+        title_parts.append(title_prefix)
+    if rank is not None:
+        title_parts.append(f"#{rank}")
+    title_parts.append(seq_name)
     if per_seq_row:
         miou = per_seq_row.get("mean_iou", 0)
         title_parts.append(f"mean_IoU={miou:.4f}")
-    if rank is not None:
-        title_parts.insert(0, f"Rank #{rank}")
+
     fig.suptitle("Qualitative Tracking — " + "  |  ".join(title_parts) + "\n(Green=Ground Truth, Red=Prediction)", 
                  fontsize=13, fontweight="bold")
 
@@ -385,10 +394,11 @@ def plot_qualitative_comparison(
 
     plots_dir = _ensure_plots_dir(out_dir)
     safe_name = "".join(c if c.isalnum() or c in "-_" else "_" for c in seq_name)
+
     if rank is not None:
-        out_path = plots_dir / f"04_qualitative_{rank:02d}_{safe_name}.png"
+        out_path = plots_dir / f"{filename_prefix}_{rank:02d}_{safe_name}.png"
     else:
-        out_path = plots_dir / f"04_qualitative_{safe_name}.png"
+        out_path = plots_dir / f"{filename_prefix}_{safe_name}.png"
 
     fig.savefig(out_path, dpi=160, bbox_inches="tight")
     plt.close(fig)
@@ -433,11 +443,62 @@ def generate_top_qualitative_plots(
                 per_seq_row=row,
                 out_dir=out_dir,
                 frames=None,   # auto evenly spaced
-                rank=rank
+                rank=rank,
+                title_prefix="Best performing",
+                filename_prefix="04_best_qualitative"
             )
             if p:
                 saved.append(p)
                 print(f"  ✓ Saved rank #{rank}: {seq_name} (mean_iou={row.get('mean_iou', 0):.4f})")
+        except Exception as e:
+            print(f"  ✗ Failed for {seq_name}: {e}")
+
+    return saved
+
+
+def generate_bottom_qualitative_plots(
+    per_seq: List[Dict[str, Any]],
+    dataset_root: Path,
+    predictions_root: Path,
+    out_dir: Path,
+    bottom_k: int = 5,
+) -> List[Path]:
+    """
+    Automatically select the BOTTOM-K (worst) sequences by mean_iou and generate
+    qualitative comparison figures for them.
+    Useful to visually analyze failure cases (the red bars in the extremes plot).
+    """
+    if not HAS_VIZ_DEPS:
+        print("[visualize] matplotlib/pillow/numpy not installed → skipping worst qualitative plots")
+        return []
+
+    if not per_seq:
+        return []
+
+    # Sort by mean_iou ascending (worst first)
+    sorted_seqs = sorted(per_seq, key=lambda r: r.get("mean_iou", 0))
+    worst_seqs = sorted_seqs[:bottom_k]
+
+    saved = []
+    print(f"[visualize] Generating {len(worst_seqs)} qualitative comparison figures for the WORST performing sequences (lowest mean_iou)...")
+
+    for rank, row in enumerate(worst_seqs, 1):
+        seq_name = row["sequence"]
+        try:
+            p = plot_qualitative_comparison(
+                seq_name=seq_name,
+                dataset_root=dataset_root,
+                predictions_root=predictions_root,
+                per_seq_row=row,
+                out_dir=out_dir,
+                frames=None,
+                rank=rank,
+                title_prefix="Worst performing",
+                filename_prefix="05_worst_qualitative"
+            )
+            if p:
+                saved.append(p)
+                print(f"  ✓ Saved worst #{rank}: {seq_name} (mean_iou={row.get('mean_iou', 0):.4f})")
         except Exception as e:
             print(f"  ✗ Failed for {seq_name}: {e}")
 
@@ -452,14 +513,15 @@ def generate_all_visualizations(
     predictions_root: Path,
     out_dir: Path,
     top_qualitative_k: int = 5,
+    bottom_qualitative_k: int = 5,
 ) -> List[Path]:
     """
-    Generate all plots including the original 3 summary plots + up to `top_qualitative_k`
-    high-quality qualitative comparison figures (RGB + Depth with GT/Pred boxes)
-    for the best performing sequences.
+    Generate:
+    - 3 summary plots (extremes bar, length-vs-IoU, precision-success bubble)
+    - Top-K best qualitative figures (best performing sequences)
+    - Bottom-K worst qualitative figures (lowest mean_iou sequences, red bars in the chart)
 
-    This is the recommended entry point. It now produces 5 nice qualitative examples
-    automatically by picking the top-K sequences according to mean_iou.
+    This gives you both success cases and clear failure cases for analysis.
     """
     if not HAS_VIZ_DEPS:
         warnings.warn(
@@ -490,8 +552,7 @@ def generate_all_visualizations(
     except Exception as e:
         print(f"[visualize] plot 3 failed: {e}")
 
-    # New: automatically generate 5 (or user-specified) beautiful qualitative figures
-    # for the sequences where the tracker performed best.
+    # Best performing sequences (green / high IoU side of the bar chart)
     try:
         qual_saved = generate_top_qualitative_plots(
             per_seq=per_seq,
@@ -502,7 +563,20 @@ def generate_all_visualizations(
         )
         saved.extend(qual_saved)
     except Exception as e:
-        print(f"[visualize] multi qualitative plots failed: {e}")
+        print(f"[visualize] best qualitative plots failed: {e}")
+
+    # Worst performing sequences (red / low IoU side of the bar chart) - NEW
+    try:
+        worst_saved = generate_bottom_qualitative_plots(
+            per_seq=per_seq,
+            dataset_root=dataset_root,
+            predictions_root=predictions_root,
+            out_dir=out_dir,
+            bottom_k=bottom_qualitative_k,
+        )
+        saved.extend(worst_saved)
+    except Exception as e:
+        print(f"[visualize] worst qualitative plots failed: {e}")
 
     if saved:
         print(f"[visualize] Saved {len(saved)} figures under {out_dir / 'plots'}")

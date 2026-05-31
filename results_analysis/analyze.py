@@ -9,9 +9,10 @@ Writes:
   - plots/01_iou_extremes.png
   - plots/02_length_vs_iou.png
   - plots/03_precision_vs_success_bubble.png
-  - plots/04_qualitative_01_xxx.png ... 04_qualitative_05_xxx.png   (top-5 best sequences, RGB+Depth with boxes)
+  - plots/04_best_qualitative_01_xxx.png ... 04_best_05_xxx.png   (top-5 highest mean_iou)
+  - plots/05_worst_qualitative_01_xxx.png ... 05_worst_05_xxx.png (bottom-5 lowest mean_iou, red bars)
 
-The 5 qualitative figures are automatically chosen from sequences with the highest mean_iou.
+Both best and worst qualitative sets are generated automatically (RGB + Depth + boxes).
 """
 
 import argparse
@@ -276,7 +277,8 @@ def main(argv=None):
             dataset_root=dataset_root,
             predictions_root=pred_root,
             out_dir=here,
-            top_qualitative_k=5,          # ← change this if you want more or fewer
+            top_qualitative_k=5,          # best performing (high IoU)
+            bottom_qualitative_k=5,       # worst performing (low IoU - the red bars)
         )
     except Exception as viz_err:
         print(f"[analyze] Visualization generation skipped or failed (non-fatal): {viz_err}", file=sys.stderr)
